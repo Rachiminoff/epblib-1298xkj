@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EPUB & PDF Library</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+  <aside>
+    <h2>Library</h2>
+
+    <!-- Search input -->
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search books..."
+      autocomplete="off"
+      class="sidebar-search"
+      aria-label="Search books"
+    />
+
+    <!-- Category filter -->
+    <ul id="sidebar" role="list">
+      <li data-category="All" class="active" role="button" tabindex="0">All Books</li>
+      <li data-category="Webnovels" role="button" tabindex="0">Webnovels</li>
+      <li data-category="Light Novels" role="button" tabindex="0">Light Novels</li>
+      <li data-category="Novels" role="button" tabindex="0">Novels</li>
+      <li data-category="Educational" role="button" tabindex="0">Educational</li>
+
+    </ul>
+  </aside>
+
+  <main>
+    <h1 id="main-title">Library</h1>
+    <div class="grid" id="bookGrid" role="list"></div>
+  </main>
+
+  <!-- Modal for book details -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDescription" style="display:none;">
+    <div class="modal-content">
+      <button class="close" aria-label="Close modal">&times;</button>
+      <div class="modal-body">
+        <img id="modalCover" alt="Book Cover" />
+        <div class="modal-details">
+          <h2 id="modalTitle"></h2>
+          <p id="modalDescription"></p>
+          <div class="modal-links"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="scripts/books.js"></script>
+<script src="scripts/script.js"></script>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,227 @@
+/* Reset & basics */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #121212;
+  color: #ddd;
+}
+a {
+  color: #60aaff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Sidebar */
+aside {
+  width: 220px;
+  background: #1e1e2f;
+  color: #bbb;
+  padding: 1em;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+aside h2 {
+  margin-bottom: 1em;
+  color: #60aaff;
+}
+
+/* Search box in sidebar */
+.sidebar-search {
+  margin-bottom: 1em;
+  padding: 0.4em 0.75em;
+  border-radius: 6px;
+  border: none;
+  font-size: 1em;
+  background: #2c2c2c;
+  color: #ddd;
+}
+.sidebar-search::placeholder {
+  color: #888;
+}
+
+#sidebar {
+  list-style: none;
+  padding-left: 0;
+}
+#sidebar li {
+  cursor: pointer;
+  padding: 0.5em 0;
+  transition: color 0.2s;
+}
+#sidebar li:hover {
+  color: #60aaff;
+}
+#sidebar li.active {
+  color: #60aaff;
+  font-weight: 700;
+}
+
+/* Main */
+main {
+  flex: 1;
+  padding: 1.5em;
+  overflow-y: auto;
+  background: #181818;
+}
+h1 {
+  margin-bottom: 0.5em;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1.5em;
+}
+
+/* Book cards */
+.book {
+  background: #252538;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+.book:hover {
+  transform: scale(1.05);
+}
+.book img {
+  width: 100%;
+  height:100%;
+  object-fit: cover;
+}
+.book h3 {
+  font-size: 1em;
+  padding: 0.5em 0.75em;
+  color: #ddd;
+}
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  padding-bottom: 1em;
+}
+.links a {
+  background: #444766;
+  padding: 0.3em 0.8em;
+  border-radius: 5px;
+  font-size: 0.85em;
+  color: #ddd;
+  user-select: none;
+}
+.links a:hover {
+  background: #60aaff;
+  color: #121212;
+}
+
+/* Modal */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.85);
+  backdrop-filter: blur(5px);
+}
+.modal-content {
+  background-color: #202032;
+  margin: 5% auto;
+  padding: 1.5em;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 900px;
+  color: #ddd;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 25px rgba(96, 170, 255, 0.5);
+}
+
+#modalCover {
+  max-width: 300px;
+  max-height: 400px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+#modalDescription {
+  white-space: pre-wrap; /* preserve line breaks */
+  flex: 1; /* fill remaining space */
+  overflow-y: auto;
+  max-height: 400px;
+  padding-right: 0.5rem;
+}
+
+.close {
+  font-size: 2rem;
+  background: transparent;
+  border: none;
+  color: #fff;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.modal-body {
+  display: flex;
+  gap: 1.5em;
+  flex-wrap: wrap;
+}
+.modal-body img {
+  max-width: 250px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(96, 170, 255, 0.7);
+  flex-shrink: 0;
+}
+.modal-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.modal-details h2 {
+  margin-bottom: 0.5em;
+}
+.modal-details p {
+  margin-bottom: 1em;
+  color: #bbb;
+  line-height: 1.4;
+}
+
+.modal-links a {
+  display: inline-block;
+  margin-right: 1em;
+  padding: 0.5em 1em;
+  background: #60aaff;
+  color: #121212;
+  border-radius: 6px;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+.modal-links a:hover {
+  background: #3b7bd3;
+}
+

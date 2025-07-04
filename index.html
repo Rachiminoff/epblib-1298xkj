@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Book Archive</title>
+  <link rel="stylesheet" href="styles/index.css" />
+</head>
+<body>
+ <!-- Main Content -->
+<main class="profile">
+  <img src="styles/img/profile.jpg" alt="Profile Picture" class="avatar" />
+  <div class="info">
+    <h1>@kasaysayan</h1>
+    <p>This is my quiet little archive.</p>
+    <p>Just some books I read, stored as EPUBs and PDFs.<br />
+      This isn’t a library, it’s a shelf.</p>
+  </div>
+
+  <section class="social-cards">
+    <a href="archive.html" class="card" aria-label="Book Archive">
+      <h3>Book Archive</h3>
+      <p>An archive for books.</p>
+    </a>
+
+    <a href="https://vndb.org/u294570/ulist?vnlist=1" target="_blank" class="card" aria-label="VNDB Profile">
+      <h3>VNDB</h3>
+      <p>Visual novels database and progress tracker.</p>
+    </a>
+
+    <a href="https://anilist.co/user/Magdalo/" target="_blank" class="card" aria-label="AniList Profile">
+    <img src="./styles/img/AniList_logo.png" alt="AniList logo"  class="card-logo" />
+      <h3>AniList</h3>
+      <p>Tracking anime and manga I enjoy.</p>
+    </a>
+
+    <a href="https://letterboxd.com/Kasaysayan/" target="_blank" class="card" aria-label="Letterboxd Profile">
+      <img src="./styles/img/letterboxd.png" alt="Letterboxd logo" class="card-logo" />
+      <h3>Letterboxd</h3>
+      <p>My movie diary and review site.</p>
+    </a>
+
+    <a href="https://infinitebacklog.net/users/kasa-ysayan2" target="_blank" class="card" aria-label="Infinite Backlog Profile">
+      <img src="./styles/img/infinitebacklog.png" alt="Infinite Backlog logo" class="card-logo" />
+      <h3>Infinite Backlog</h3>
+      <p>Keeping track of my gaming backlog.</p>
+    </a>
+  </section>
+</main>
+
+
+  <footer>
+    <p>Personal use only. Do not redistribute without permission.</p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById("toggleSidebar");
+    const sidebar = document.getElementById("sidebar");
+
+    toggleBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("open");
+    });
+  </script>
+
+</body>
+</html>

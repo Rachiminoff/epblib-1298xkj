@@ -374,10 +374,83 @@ Coraline will have to fight with all her wit and courage if she is to save herse
   },
   {
     title: "Harry Potter: The Complete Collection",
-    cover: "https://static.wikia.nocookie.net/harrypotter/images/b/be/Completecollection.jpeg/revision/latest/thumbnail/width/360/height/360?cb=20160822110805",
+    cover: "https://posterspy.com/wp-content/uploads/2021/03/Harry_Potter_new.jpg",
     pdf: "https://drive.google.com/file/d/1W94eOQBLc_AcZMwor4AsjTjIbDKEV5Oz/view?usp=sharing",
     category: "Novels",
     description: `Orphan Harry learns he is a wizard on his 11th birthday when Hagrid escorts him to magic-teaching Hogwarts School. As a baby, his mother's love protected him and vanquished the villain Voldemort, leaving the child famous as "The Boy who Lived." With his friends Hermione and Ron, Harry has to defeat the returned "He Who Must Not Be Named."
     ` 
   },
+  {
+    title: "ABNKKBSNPLAko?!",
+    cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1297789858i/1433337.jpg",
+    pdf: "https://drive.google.com/file/d/1Zo7_1ww9IrIFvrQGrazRFVA-7-Z74f9z/view?usp=sharing",
+    category: "Novels",
+    description: `Bakit namamalo si Miss Uyehara?
+May mga notebook bang lumilipad?
+Bakit masakit sa ulo ang Mafhemafics?
+Ano ang sikreto sa pagkakaibigan nila Pepe at Tagpi?
+Bakit may mga taong nakapikit sa litrato?
+Masarap ba ang Africhado?
+Sino si Tigang?
+Bakit may mga classroom na kulang ang upuan?
+Masama bang mag-isip nang malalim habang naglalakad?
+Saan ang Ganges River sa Pilipinas?
+Bakit may mga umaakyat ng overpass pero hindi tumatawid?
+Sino ang webmaster ng bobongpinoy sa Internet?
+
+No calculators.
+No dictionaries.
+No erasures.
+No cheating.
+
+Oops, time's up!
+Pass your papers.
+    ` 
+  },
+  {
+    title: "The Fellowship of the Ring",
+    cover: "https://m.media-amazon.com/images/I/61mn09OvTQL._SL1500_.jpg",
+    pdf: "https://drive.google.com/file/d/1ZRyM97OD6t99QNG2Iq6OKhZkigw_EYvi/view?usp=sharing",
+    category: "Novels",
+    description: `One Ring to rule them all, One Ring to find them, One Ring to bring them all and in the darkness bind them.
+
+In ancient times the Rings of Power were crafted by the Elven-smiths, and Sauron, the Dark Lord, forged the One Ring, filling it with his own power so that he could rule all others. But the One Ring was taken from him, and though he sought it throughout Middle-earth, it remained lost to him. After many ages it fell into the hands of Bilbo Baggins, as told in The Hobbit.
+
+In a sleepy village in the Shire, young Frodo Baggins finds himself faced with an immense task, as his elderly cousin Bilbo entrusts the Ring to his care. Frodo must leave his home and make a perilous journey across Middle-earth to the Cracks of Doom, there to destroy the Ring and foil the Dark Lord in his evil purpose.
+    ` 
+  },
+  {
+    title: "The Two Towers",
+    cover: "https://m.media-amazon.com/images/I/61JO1okOIHL._SL1500_.jpg",
+    pdf: "https://drive.google.com/file/d/1GFt-2OwIcDBnYLoss2ajDV1gBByZaJsR/view?usp=sharing",
+    category: "Novels",
+    description: `Begin your journey into Middle-earth.
+
+The inspiration for the upcoming original series on Prime Video, The Lord of the Rings: The Rings of Power.
+
+The Two Towers is the second part of J.R.R. Tolkien’s epic adventure The Lord of the Rings.
+
+One Ring to rule them all, One Ring to find them, One Ring to bring them all and in the darkness bind them.
+
+Frodo and his Companions of the Ring have been beset by danger during their quest to prevent the Ruling Ring from falling into the hands of the Dark Lord by destroying it in the Cracks of Doom. They have lost the wizard, Gandalf, in a battle in the Mines of Moria. And Boromir, seduced by the power of the Ring, tried to seize it by force. While Frodo and Sam made their escape, the rest of the company was attacked by Orcs. Now they continue the journey alone down the great River Anduin—alone, that is, save for the mysterious creeping figure that follows wherever they go.
+    ` 
+  },
+  {
+    title: "The Return of the King",
+    cover: "https://prodimage.images-bn.com/pimages/9780547928197_p0_v4_s600x595.jpg",
+    pdf: "https://drive.google.com/file/d/1UjTRSUUvI13TO-P9kuOfiEqNOcRdFm_Z/view?usp=sharing",
+    category: "Novels",
+    description: `Begin your journey into Middle-earth.
+
+The Return of the King is the third part of J.R.R. Tolkien’s epic adventure The Lord of the Rings.
+
+One Ring to rule them all, One Ring to find them, One Ring to bring them all and in the darkness bind them.
+
+The Dark Lord has risen, and as he unleashes hordes of Orcs to conquer all Middle-earth, Frodo and Sam struggle deep into his realm in Mordor.
+
+To defeat Sauron, the One Ring must be destroyed in the fires of Mount Doom. But the way is impossibly hard, and Frodo is weakening. The Ring corrupts all who bear it and Frodo’s time is running out.
+
+Will Sam and Frodo succeed, or will the Dark Lord rule Middle-earth once more?
+    ` 
+  }
 ];

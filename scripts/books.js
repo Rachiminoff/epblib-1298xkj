@@ -250,7 +250,7 @@ As Adachi and Shimamura share life as adults, they’ve never been happier. Thei
 From youth to maturity. From skipping school to sharing a bed. From classmates to lovers. This short story collection features dozens of fleeting scenes that illuminate the tumultuous relationship between Adachi and Shimamura, ordinary girls with an extraordinary connection.`
   },
   {
- title: "Bloom Into You: Regarding Saeki Sayaka Vol. 1",
+    title: "Bloom Into You: Regarding Saeki Sayaka Vol. 1",
     cover: "https://sevenseasentertainment.com/wp-content/uploads/2019/11/Bloom-In-To-You-LN-1-coverFRONT.jpg",
     pdf: "https://drive.google.com/drive/u/1/folders/1346xTKlE214tti0CTXkx1WtKNjCtuqVa",
     category: "Light Novels",
@@ -260,7 +260,7 @@ Saeki Sayaka has always been an old soul–serious and reserved, preferring to f
 `
   },
   {
- title: "Bloom Into You: Regarding Saeki Sayaka Vol. 2",
+    title: "Bloom Into You: Regarding Saeki Sayaka Vol. 2",
     cover: "https://sevenseasentertainment.com/wp-content/uploads/2020/02/Bloom-In-To-You-LN-2-coverFRONT.jpg",
     pdf: "https://sevenseasentertainment.com/wp-content/uploads/2020/02/Bloom-In-To-You-LN-2-coverFRONT.jpg",
     category: "Light Novels",
@@ -270,7 +270,7 @@ After her first girlfriend broke her heart, Saeki Sayaka swore she would never l
 `
   },
   {
- title: "Bloom Into You: Regarding Saeki Sayaka Vol. 3",
+    title: "Bloom Into You: Regarding Saeki Sayaka Vol. 3",
     cover: "https://sevenseasentertainment.com/wp-content/uploads/2020/09/Bloom-In-To-You-LN-3-coverFRONT.jpg",
     pdf: "https://drive.google.com/drive/u/1/folders/1346xTKlE214tti0CTXkx1WtKNjCtuqVa",
     category: "Light Novels",
@@ -279,6 +279,125 @@ After her first girlfriend broke her heart, Saeki Sayaka swore she would never l
 Saeki Sayaka is no stranger to unrequited love. What she’s not used to is having someone confess their feelings for her—until Edamoto Haru, an underclassman, does exactly that in Sayaka’s second year of college. Haru is forward and unhesitating in her affections, the opposite of cautious, reserved Sayaka—but if she can find the courage to reach back, this time, she might find what she’s been waiting for all along
 `
   },
+  {
+    title: "Bloom Into You: Regarding Saeki Sayaka Vol. 2",
+    cover: "https://sevenseasentertainment.com/wp-content/uploads/2020/02/Bloom-In-To-You-LN-2-coverFRONT.jpg",
+    pdf: "https://sevenseasentertainment.com/wp-content/uploads/2020/02/Bloom-In-To-You-LN-2-coverFRONT.jpg",
+    category: "Light Novels",
+    description: `ONCE BITTEN, TWICE AS SHY
+
+After her first girlfriend broke her heart, Saeki Sayaka swore she would never let herself fall in love again. Then she started high school—and met Nanami Touko. Drawn to each other from their very first meeting, the two girls develop a friendship that slowly begins to blossom into something more. But is Saeki ready to put her heart on the line one more time? Or will fear hold her back from taking the plunge?
+`
+  },
+  {
+    title: "My First Love's Kiss Vol. 1",
+    cover: "https://images.yenpress.com/imgs/9781975389468.jpg?w=408&h=612&type=books&s=30fec8931ac9e20a2bfc2c486c630c1d",
+    pdf: "https://drive.google.com/file/d/1ZiuaNKdPuENHDM3akV6_RJftkEE4MioC/view?usp=sharing",
+    category: "Light Novels",
+    description: `Why did I have to fall in love with my roommate?
+
+Takasora Hoshi’s life is upended when her schoolmate Umi Mizuike and her mother temporarily move into her family’s cramped apartment. From the outset of this arrangement, Takasora is annoyed by Umi’s behavior…and her good looks. Though the two girls initially agree to avoid interfering in each other’s lives, Takasora can’t help but start to wonder where Umi keeps wandering off to at night…From the author of Adachi and Shimamura comes the bittersweet tale of two high school girls whose lives are pushed together under the same roof.
+`
+  },
+  {
+    title: "My First Love's Kiss Vol. 2",
+    cover: "https://images.yenpress.com/imgs/9781975389482.jpg?w=285&h=422&type=books&s=ae1ec1331e2e9f78d3ef3e7b0a5cbd3b",
+    pdf: "https://drive.google.com/file/d/1Zfc_jGjYJ9ALBhGURVN9G2ee54VlyaoQ/view?usp=sharing",
+    category: "Light Novels",
+    description: `Ever since Umi Mizuike suddenly became her roommate, Takasora Hoshi can’t get her out of her head. Umi is quiet, beautiful, and probably Takasora’s first love. Unfortunately, Umi is already in a relationship of sorts, with an adult woman who pays her—and before Takasora can even process this, the woman invites her out to a hotel for a “girls’ night,” too. Could this get any worse?
+`
+  },
+  {
+    title: "My First Love's Kiss Vol. 3",
+    cover: "https://images.yenpress.com/imgs/9798855407372.jpg?w=408&h=612&type=books&s=e603203b7fcc95810db029bf4100c189",
+    pdf: "https://drive.google.com/file/d/1ZhmawzxcVfM6ZBHeLjmZzI9uH4dHGvQC/view?usp=sharing",
+    category: "Light Novels",
+    description: `Love conquers all—
+
+but which kind? Chiki Rikunaka, the twisted, kimono-wearing beauty and connoisseur of high school girls, has revealed her true identity. But Umi isn’t reeling from learning the truth about their relationship—if anything, her infatuation only grows. Was Takasora’s first love doomed from the start? Either way, this love triangle reaches its conclusion.
+`
+  },
+  {
+    title: "Otherside Picnic Vol. 1",
+    cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1563367386l/49526960.jpg",
+    pdf: "https://drive.google.com/file/d/1zEl61PffocD8dU9pei8Gwm4Aw5Pm1btT/view?usp=sharing",
+    category: "Light Novels",
+    description: `Her first encounter with Toriko Nishina was on the Otherside after seeing "that thing" and nearly dying.
+
+Ever since that day, exhausted university student Sorawo Kamikoshi's life changed. In this Otherworld, full of mystery, which exists alongside our own, dangerous beings like the Kunekune and Hasshaku-sama that are spoken of in real ghost stories appear. For research, for profit, and to find an important person, Toriko and Sorawo set foot into the abnormal.
+`
+  },
+  {
+    title: "Otherside Picnic Vol. 2",
+    cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1570192877l/52295565.jpg",
+    pdf: "https://drive.google.com/file/d/1zFutp8NwOh0_LpZDnjzkn_XFnV1PwlAB/view?usp=sharing",
+    category: "Light Novels",
+    description: `Summer has arrived, and university students Sorawo Kamikoshi and Toriko Nishina’s connection deepens as they explore the alternate world known as the Otherside.
+
+There's a rescue operation for the U.S. forces trapped at Kisaragi Station, a night at the Beach of the End on the other side of a resort in Okinawa, a karate-using kouhai who is under attack by ninja cats…
+
+And will the mystery of Toriko's missing friend, Satsuki Uruma, finally unravel?
+
+The unknown and bizarre clash with complex relationships in this popular survival series.
+`
+  }, 
+  {
+    title: "Otherside Picnic Vol. 3",
+    cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1579268244i/50523184.jpg",
+    pdf: "https://drive.google.com/file/d/1zGoKK6TobbDjreOeyHiVUlI2pYxQPhAy/view?usp=sharing",
+    category: "Light Novels",
+    description: `Autumn has arrived. Having narrowly avoided the curse of the Kotoribako, Sorawo and Toriko are back to exploring the other world. With boxed lunches in tow, the two take their agricultural vehicle for a leisurely drive across grassy terrain, deal with the problems caused by Sorawo's kouhai at university, and hang out at cognitive scientist Kozakura's house. Naturally, bizarre entities and Satsuki Uruma's shadow are watching their every move. And just what is Urumiluna, the greatest threat they’ve ever encountered? Don’t miss the third volume of the girls' tale of survival, where feelings they can't show each other collide!`
+  },
+  {
+    title: "Otherside Picnic Vol. 4",
+    cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1609045412i/56430626.jpg",
+    pdf: "https://drive.google.com/file/d/1zTZG_j85lD8LQEpSN0VjiflNZxxvrPgs/view?usp=sharing",
+    category: "Light Novels",
+    description: `Winter is coming. Having been attacked by a group that worshiped Satsuki Uruma, Sorawo and Toriko head to the cult's former base—the Farm in the Mountains. The other world is still chock full of all kinds of dangerous mysteries, but the allure of exploring the unknown is ever present. Sorawo prepares for more adventures with Toriko, but the most terrifying of threats is silently closing in on them. Not to mention the fact that it seems there's something Toriko needs to tell Sorawo... There's no turning back now—a whirlwind of bizarre exploration and survival is upon them!
+`
+  }, 
+  {
+    title: "Otherside Picnic Volume 5: Hasshaku-sama Revival",
+    cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1629059324i/58776463.jpg",
+    pdf: "https://drive.google.com/file/d/1zQqLAB5n63I7cwd9qg6HhvRWj8GHHSOp/view?usp=sharing",
+    category: "Light Novels",
+    description: `Having succeeded in their goal of spending a night on the Otherside, Sorawo and Toriko can now take their expeditions deeper. The two spend their days surrounded by the supernatural, going back and forth between their normal and abnormal daily lives.
+A chaotic love hotel girls' party in Shinjuku vanishes from Sorawo's memory. Toriko's university life and inner thoughts become clear. A mysterious lady lives in a mansion in the other world.
+As they search for clues as to the whereabouts of the missing man, Abarato, Hasshaku-sama appears before the pair once again.
+`
+  }, 
+  {
+    title: "Otherside Picnic Volume 6: T is for Templeborn",
+    cover: "https://m.media-amazon.com/images/I/91plOhf76vL._SL1500_.jpg",
+    pdf: "https://drive.google.com/file/d/1zO21sKXhUyX2xBb-8Qhw1Vn7OL9_olch/view?usp=sharing",
+    category: "Light Novels",
+    description: `My name is Sorawo Kamikoshi. I’m just your everyday, plain-as-can-be student attending university in Saitama.
+
+One day, some blonde I've never met shows up and tells me I have amnesia. Before I have time to be confused, I'm whisked away to a mysterious facility in a car driven by a member of the yakuza. What's gonna happen to me?!
+
+T the Templeborn, the net lore that seals all memories of the world that exists alongside our own—the Otherside—attacks Sorawo and her companions!
+
+The tale of two girls' bizarre foray into a world exploration and survival continues with an extra-long story in Volume 6!
+`
+  }, 
+  {
+    title: "Otherside Picnic Volume 7: Funeral of the Moon",
+    cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1652732642i/61110499.jpg",
+    pdf: "https://drive.google.com/file/d/1zcVXIJ-O8NbPvh-nRIqXRku9TMgUV2k4/view?usp=sharing",
+    category: "Light Novels",
+    description: `Satsuki Uruma—a young woman of considerable importance to Toriko who disappeared while studying the Otherside. She has menaced Toriko and Sorawo many times as an apparition, but now, she makes her boldest move yet towards the latter. In an act of desperation, Sorawo resolves to use everything she knows about the occult to finally “exorcize” her. Enlisting the help of not just Toriko, but Kozakura, DS Research, and even former cult leader and high schooler Runa Urumi, Sorawo leads the charge on a funeral operation.
+
+`
+  }, 
+  {
+    title: "Otherside Picnic Volume 8: Accomplices No More",
+    cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1685541086i/168710201.jpg",
+    pdf: "https://drive.google.com/file/d/1uIakc9LjNPuSr62N3rjF13xp986KuWQ6/view?usp=sharing",
+    category: "Light Novels",
+    description: `“Did you know? They say that being accomplices is the closest kind of relationship in the world.” This is what Toriko said to Sorawo not long after they met on the Otherside. A little over a year has passed since then. Now that the threat of Satsuki Uruma is behind them, there's something else Sorawo must face; a genuine confession of love from Toriko, with only one week to respond. Through a series of conversations with herself and those around her, Sorawo begins to reinterpret her relationship with Toriko... Sorawo and Toriko's bizarre tale of exploration and survival is coming to a climax!
+
+`
+  }, 
   // =============== EDUCATIONAL ===============
   {
     title: "Everything You Need to Ace Computer Science and Coding in One Big Fat Notebook",
@@ -451,6 +570,14 @@ The Dark Lord has risen, and as he unleashes hordes of Orcs to conquer all Middl
 To defeat Sauron, the One Ring must be destroyed in the fires of Mount Doom. But the way is impossibly hard, and Frodo is weakening. The Ring corrupts all who bear it and Frodo’s time is running out.
 
 Will Sam and Frodo succeed, or will the Dark Lord rule Middle-earth once more?
+    ` 
+  },
+  {
+    title: "Strange Weather in Tokyo",
+    cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1375634096i/18283207.jpg",
+    epub: "https://drive.google.com/file/d/1_V55EZElxHlpVD858Wp1JpczSTGIPbC_/view?usp=sharing",
+    category: "Novels",
+    description: `Tsukiko is drinking alone in her local sake bar when by chance she meets one of her old high school teachers and, unable to remember his name, she falls back into her old habit of calling him 'Sensei'. After this first encounter, Tsukiko and Sensei continue to meet. Together, they share edamame beans, bottles of cold beer, and a trip to the mountains to eat wild mushrooms. As their friendship deepens, Tsukiko comes to realise that the solace she has found with Sensei might be something more.
     ` 
   }
 ];

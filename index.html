@@ -18,48 +18,109 @@
   </div>
 
   <section class="social-cards">
+    <h2>Trackers</h2>
     <a href="sks-82skw80l.html" class="card" aria-label="Book Archive">
       <h3>Book Archive</h3>
       <p>An archive for books.</p>
     </a>
 
-    <a href="https://vndb.org/u294570/ulist?vnlist=1" target="_blank" class="card" aria-label="VNDB Profile">
+    <a href="https://vndb.org/u294570/ulist?vnlist=1" target="_blank" class="card">
       <h3>VNDB</h3>
       <p>Visual novels database and progress tracker.</p>
     </a>
 
-    <a href="https://anilist.co/user/Magdalo/" target="_blank" class="card" aria-label="AniList Profile">
-    <img src="./styles/img/AniList_logo.png" alt="AniList logo"  class="card-logo" />
+    <a href="https://anilist.co/user/Magdalo/" target="_blank" class="card">
+      <img src="./styles/img/AniList_logo.png" alt="AniList logo" class="card-logo" />
       <h3>AniList</h3>
       <p>Tracking anime and manga I enjoy.</p>
     </a>
 
-    <a href="https://letterboxd.com/Kasaysayan/" target="_blank" class="card" aria-label="Letterboxd Profile">
+    <a href="https://letterboxd.com/Kasaysayan/" target="_blank" class="card">
       <img src="./styles/img/letterboxd.png" alt="Letterboxd logo" class="card-logo" />
       <h3>Letterboxd</h3>
       <p>My movie diary and review site.</p>
     </a>
 
-    <a href="https://infinitebacklog.net/users/kasa-ysayan2" target="_blank" class="card" aria-label="Infinite Backlog Profile">
+    <a href="https://infinitebacklog.net/users/kasa-ysayan2" target="_blank" class="card">
       <img src="./styles/img/infinitebacklog.png" alt="Infinite Backlog logo" class="card-logo" />
       <h3>Infinite Backlog</h3>
       <p>Keeping track of my gaming backlog.</p>
     </a>
   </section>
-</main>
+  <section class="tool-cards">
+      <h2>Tools</h2>
+      <button id="openDiscountModal" class="card" aria-label="Open Discount Calculator">
+        <h3>Discount Calculator</h3>
+        <p>Calculate final prices easily.</p>
+      </button>
+      <button id="openPasswordModal" class="card" aria-label="Open Password Generator">
+        <h3>Password Generator</h3>
+        <p>Randomly Generates Password.</p>
+      </button>
+      <button id="openMarkdownModal" class="card" aria-label="Open Password Generator">
+        <h3>Markdown Reader</h3>
+        <p>Shows preview of markdown formatted text.</p>
+      </button>
+    </section>
+  </main>
 
+  <!-- Discount Calculator Modal -->
+  <div id="discountModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="discountTitle" aria-modal="true">
+    <div class="modal-content">
+      <button id="closeDiscountModal" class="close" aria-label="Close discount calculator">&times;</button>
+      <h2 id="discountTitle">Discount Calculator</h2>
+      <form id="discountForm">
+        <label>
+          Original Price (₱)
+          <input type="number" id="originalPrice" step="0.01" required />
+        </label>
+        <label>
+          Discount (%)
+          <input type="number" id="discountPercent" step="0.01" required />
+        </label>
+        <button type="submit">Calculate</button>
+      </form>
+      <div class="results" id="resultBox" style="display:none;">
+        <p>You save: <span id="amountSaved">₱0.00</span></p>
+        <p>Final price: <span id="finalPrice">₱0.00</span></p>
+      </div>
+    </div>
+  </div>
 
+<!-- Password Generator Modal -->
+<div id="modalPassword" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalPasswordTitle" aria-describedby="modalPasswordDesc" aria-hidden="true">
+  <div class="modal-content">
+    <button class="close-btn" aria-label="Close Password Generator">&times;</button>
+    <h2 id="modalPasswordTitle">Random Password Generator</h2>
+
+    <label for="passLength">Length (4–64):</label>
+    <input id="passLength" type="number" min="4" max="64" value="16" />
+
+    <label><input type="checkbox" id="includeLowercase" checked /> Include lowercase</label>
+    <label><input type="checkbox" id="includeUppercase" checked /> Include uppercase</label>
+    <label><input type="checkbox" id="includeNumbers" checked /> Include numbers</label>
+    <label><input type="checkbox" id="includeSymbols" /> Include symbols</label>
+
+    <button id="generatePassword" class="primary">Generate Password</button>
+
+    <pre class="result" id="passwordResult" tabindex="0" aria-live="polite" aria-atomic="true"></pre>
+  </div>
+</div>
+
+<!-- === Markdown Previewer Modal === -->
+<div id="markdownModal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <button class="close-btn" aria-label="Close">&times;</button>
+    <h2>Markdown Previewer</h2>
+    <textarea id="markdownInput" rows="10" placeholder="Type markdown here..."></textarea>
+    <div id="markdownPreview" class="markdown-preview"></div>
+  </div>
+</div>
   <footer>
     <p>Personal use only. Do not redistribute without permission.</p>
   </footer>
 
-  <script>
-    const toggleBtn = document.getElementById("toggleSidebar");
-    const sidebar = document.getElementById("sidebar");
-
-    toggleBtn.addEventListener("click", () => {
-      sidebar.classList.toggle("open");
-    });
+  <script src="scripts/tools.js">
   </script>
 
 </body>

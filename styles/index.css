@@ -122,3 +122,293 @@ footer {
     font-size: 0.85rem;
   }
 }
+
+.tool-cards, .social-cards {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 900px;
+  padding: 0 1rem;
+}
+
+.tool-cards h2,
+.social-cards h2 {
+  grid-column: 1 / -1;
+  font-size: 1.4rem;
+  color: #60aaff;
+  margin-bottom: 0.5rem;
+}
+
+.card {
+  background: #1e1e2f;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  text-align: center;
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.card {
+  background: #252538;
+  border-radius: 10px;
+  padding: 1rem;
+  cursor: pointer;
+  text-align: center;
+  color: #ddd;
+  user-select: none;
+  border: none;
+  width: 100%;
+  transition: transform 0.15s ease;
+}
+.card:hover, .card:focus {
+  transform: scale(1.05);
+  outline: none;
+  background: #2c2c44;
+}
+
+/* Modal */
+/* Basic resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #ddd;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+/* Cards style */
+.card {
+  background: #252538;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  color: #ddd;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+  border: none;
+  width: 100%;
+  max-width: 350px;
+  user-select: none;
+  transition: transform 0.15s ease, background-color 0.3s ease;
+}
+.card:hover,
+.card:focus {
+  background-color: #35354f;
+  transform: scale(1.05);
+  outline: none;
+}
+
+/* Card logos */
+.card-logo {
+  max-width: 60px;
+  margin-bottom: 0.5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Modal base styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background-color: rgba(0,0,0,0.85);
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* Show modal */
+.modal.show {
+  display: flex;
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #202032;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 450px;
+  width: 100%;
+  box-shadow: 0 0 25px rgba(96, 170, 255, 0.5);
+  position: relative;
+  color: #ddd;
+}
+
+/* Close buttons */
+.close, .close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+.close:hover, .close-btn:hover {
+  color: #60aaff;
+}
+
+/* Form styles inside modal */
+form label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #ccc;
+}
+form input[type="number"] {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  margin-top: 0.3rem;
+  background: #2c2c2c;
+  color: #ddd;
+}
+form button[type="submit"],
+#generatePassword {
+  background: #60aaff;
+  border: none;
+  color: #121212;
+  padding: 0.75rem 1.2rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+form button[type="submit"]:hover,
+#generatePassword:hover {
+  background-color: #3b7bd3;
+}
+
+/* Result boxes */
+.results p, .result {
+  margin-top: 1rem;
+  background: #333451;
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  word-break: break-word;
+  color: #ccc;
+}
+
+/* Password generator inputs */
+.modal-content label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: normal;
+  color: #ccc;
+}
+.modal-content input[type="checkbox"] {
+  margin: 0;
+}
+
+/* Password result box */
+.result {
+  background-color: #1a1a2e;
+  font-family: monospace;
+  white-space: pre-wrap;
+  min-height: 2.5rem;
+  padding: 1rem;
+  outline: none;
+  user-select: all;
+}
+/*  Markdown Modal Specific Styles */
+#markdownModal textarea {
+  width: 100%;
+  min-height: 150px;
+  padding: 1em;
+  margin-bottom: 1em;
+  resize: vertical;
+  font-family: monospace;
+  background-color: #1e1e2f;
+  color: #f5f5f5;
+  border: 1px solid #333;
+  border-radius: 6px;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+.markdown-preview {
+  background-color: #181818;
+  padding: 1em;
+  border-radius: 6px;
+  border: 1px solid #333;
+  max-height: 300px;
+  overflow-y: auto;
+  color: #eee;
+}
+
+/* Optional: style markdown content */
+.markdown-preview h1,
+.markdown-preview h2,
+.markdown-preview h3 {
+  color: #60aaff;
+  margin-top: 1em;
+}
+
+.markdown-preview p {
+  margin-bottom: 0.75em;
+}
+
+.markdown-preview code {
+  background-color: #2a2a3d;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.markdown-preview pre {
+  background-color: #2a2a3d;
+  padding: 1em;
+  border-radius: 6px;
+  overflow-x: auto;
+  color: #f0f0f0;
+  margin-bottom: 1em;
+}
+
+.markdown-preview ul,
+.markdown-preview ol {
+  padding-left: 1.5em;
+  margin-bottom: 0.75em;
+}
+
+.markdown-preview blockquote {
+  border-left: 4px solid #60aaff;
+  padding-left: 1em;
+  color: #aaa;
+  font-style: italic;
+  margin: 1em 0;
+}

@@ -117,3 +117,4 @@ window.addEventListener("click", e => {
 
 // Initial render
 renderBooks("All", "");
+

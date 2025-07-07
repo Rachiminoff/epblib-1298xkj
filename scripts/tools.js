@@ -167,3 +167,274 @@ loadMarked(() => {
     markdownPreview.innerHTML = marked.parse(markdownText);
   });
 });
+
+//Diary
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("diaryModal");
+  const openBtn = document.getElementById("openDiaryModal");
+  const closeBtn = document.getElementById("closeDiaryModal");
+  const diaryTextarea = document.getElementById("diaryText");
+  const diaryDateInput = document.getElementById("diaryDate");
+  const saveBtn = document.getElementById("saveDiary");
+  const deleteBtn = document.getElementById("deleteDiary");
+  const exportBtn = document.getElementById("exportDiaryBtn");
+
+  // Open modal and initialize
+  openBtn.addEventListener("click", () => {
+    modal.style.display = "block";
+    modal.setAttribute("aria-hidden", "false");
+
+    // Default date: today
+    if (!diaryDateInput.value) {
+      diaryDateInput.valueAsDate = new Date();
+    }
+    loadEntry(diaryDateInput.value);
+    diaryDateInput.focus();
+  });
+
+  // Close modal
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+    modal.setAttribute("aria-hidden", "true");
+  });
+
+  // Close modal on outside click
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+      modal.setAttribute("aria-hidden", "true");
+    }
+  });
+
+  // Load entry when date changes
+  diaryDateInput.addEventListener("change", () => {
+    loadEntry(diaryDateInput.value);
+  });
+
+  // Load entry from localStorage for a given date (YYYY-MM-DD)
+  function loadEntry(date) {
+    if (!date) {
+      diaryTextarea.value = "";
+      return;
+    }
+    const entry = localStorage.getItem("diary_" + date);
+    diaryTextarea.value = entry || "";
+  }
+
+  // Save current entry under selected date
+  saveBtn.addEventListener("click", () => {
+    const date = diaryDateInput.value;
+    if (!date) {
+      alert("Please select a date.");
+      return;
+    }
+    const content = diaryTextarea.value.trim();
+    if (!content) {
+      alert("Cannot save an empty entry.");
+      return;
+    }
+    localStorage.setItem("diary_" + date, content);
+    alert(`Entry saved for ${date}.`);
+  });
+
+  // Delete entry for selected date
+  deleteBtn.addEventListener("click", () => {
+    const date = diaryDateInput.value;
+    if (!date) {
+      alert("Please select a date.");
+      return;
+    }
+    if (localStorage.getItem("diary_" + date) === null) {
+      alert("No entry found to delete for this date.");
+      return;
+    }
+    if (confirm(`Delete entry for ${date}? This cannot be undone.`)) {
+      localStorage.removeItem("diary_" + date);
+      diaryTextarea.value = "";
+      alert("Entry deleted.");
+    }
+  });
+
+  // Export all diary entries
+  exportBtn.addEventListener("click", () => {
+    const format = prompt("Export format? Enter 'json' or 'csv':", "json");
+    if (format === "json" || format === "csv") {
+      exportEntries(format);
+    } else {
+      alert("Invalid format. Please enter 'json' or 'csv'.");
+    }
+  });
+
+  function exportEntries(format) {
+    const entries = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key.startsWith("diary_")) {
+        const date = key.slice(6);
+        const content = localStorage.getItem(key);
+        entries.push({ date, content });
+      }
+    }
+
+    if (entries.length === 0) {
+      alert("No diary entries to export.");
+      return;
+    }
+
+    // Sort by date ascending
+    entries.sort((a, b) => a.date.localeCompare(b.date));
+
+    if (format === "json") {
+      const jsonStr = JSON.stringify(entries, null, 2);
+      downloadFile("diary_entries.json", "application/json", jsonStr);
+    } else if (format === "csv") {
+      let csv = "Date,Content\n";
+      entries.forEach(({ date, content }) => {
+        // Escape quotes for CSV
+        const safeContent = `"${content.replace(/"/g, '""')}"`;
+        csv += `${date},${safeContent}\n`;
+      });
+      downloadFile("diary_entries.csv", "text/csv", csv);
+    }
+  }
+
+  function downloadFile(filename, mimeType, content) {
+    const blob = new Blob([content], { type: mimeType });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => {
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }, 0);
+  }
+});
+
+//converter
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("convertModal");
+  const openBtn = document.getElementById("openConvertModal");
+  const closeBtn = document.getElementById("closeConvertModal");
+  const fileInput = document.getElementById("fileInput");
+  const convertBtn = document.getElementById("convertBtn");
+  const status = document.getElementById("status");
+
+  // Open modal
+  openBtn.addEventListener("click", () => {
+    modal.style.display = "flex";
+  });
+
+  // Close modal
+  closeBtn.addEventListener("click", () => {
+    closeModal();
+  });
+
+  // Close if clicking outside the modal content
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Enable convert button when file selected
+  fileInput.addEventListener("change", () => {
+    convertBtn.disabled = !fileInput.files.length;
+    status.textContent = "";
+  });
+
+  // Convert to PDF
+  convertBtn.addEventListener("click", () => {
+    const file = fileInput.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    const ext = file.name.split('.').pop().toLowerCase();
+
+    reader.onload = () => {
+      try {
+        let rows = [];
+
+        if (ext === "json") {
+          const json = JSON.parse(reader.result);
+
+          if (!Array.isArray(json)) throw new Error("JSON must be an array.");
+          if (json.length === 0) throw new Error("JSON array is empty.");
+
+          const headers = Object.keys(json[0]);
+          rows.push(headers);
+
+          json.forEach(obj => {
+            const row = headers.map(key => String(obj[key] ?? ""));
+            rows.push(row);
+          });
+
+        } else if (ext === "csv" || ext === "txt") {
+          rows = parseCSV(reader.result);
+        } else {
+          throw new Error("Unsupported file format.");
+        }
+
+        generatePDF(rows, file.name);
+        status.textContent = "✅ PDF generated.";
+      } catch (err) {
+        status.textContent = "❌ Error: " + err.message;
+      }
+    };
+
+    reader.onerror = () => {
+      status.textContent = "❌ Failed to read file.";
+    };
+
+    reader.readAsText(file);
+  });
+
+  function closeModal() {
+    modal.style.display = "none";
+    fileInput.value = "";
+    convertBtn.disabled = true;
+    status.textContent = "";
+  }
+
+  function parseCSV(text) {
+    const lines = text.trim().split("\n");
+    return lines.map(line =>
+      line
+        .split(",")
+        .map(cell => cell.replace(/^"|"$/g, "").trim())
+    );
+  }
+
+  function generatePDF(rows, filename) {
+    const doc = new window.jspdf.jsPDF("p", "pt");
+    const pageWidth = doc.internal.pageSize.getWidth();
+    const margin = 40;
+    const colWidth = (pageWidth - 2 * margin) / rows[0].length;
+
+    doc.setFontSize(10);
+
+    let y = margin;
+    rows.forEach((row, i) => {
+      if (!Array.isArray(row)) {
+        throw new Error(`Row ${i + 1} is not a valid array.`);
+      }
+
+      row.forEach((cell, j) => {
+        const x = margin + j * colWidth;
+        doc.text(String(cell), x, y, { maxWidth: colWidth });
+      });
+
+      y += 18;
+
+      if (y > doc.internal.pageSize.getHeight() - margin) {
+        doc.addPage();
+        y = margin;
+      }
+    });
+
+    const safeName = filename.replace(/\.[^/.]+$/, "") + ".pdf";
+    doc.save(safeName);
+  }
+});

@@ -61,8 +61,29 @@
         <h3>Markdown Reader</h3>
         <p>Shows preview of markdown formatted text.</p>
       </button>
+      <button id="openDiaryModal" class="card" aria-label="Open Private Diary">
+        <h3>Diary</h3>
+        <p>Your personal diary saved only in this browser.</p>
+      </button>
+      <button id="openConvertModal" class="card" aria-label="Open JSON/CSV to PDF Converter">
+        <h3>JSON/CSV to PDF</h3>
+        <p>Convert your JSON or CSV data into a downloadable PDF.</p>
+      </button>
     </section>
+    
   </main>
+  <div id="convertModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="convertTitle" aria-modal="true" style="display:none;">
+    <div class="modal-content" style="max-width:600px; margin:auto;">
+      <button id="closeConvertModal" class="close" aria-label="Close converter">&times;</button>
+      <h2 id="convertTitle">JSON / CSV to PDF Converter</h2>
+
+      <input type="file" id="fileInput" accept=".json,.csv,text/csv" />
+      <p>Select a JSON or CSV file to convert to PDF.</p>
+
+      <button id="convertBtn" class="btn primary" disabled>Convert to PDF</button>
+      <div id="status"></div>
+    </div>
+  </div>
 
   <!-- Discount Calculator Modal -->
   <div id="discountModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="discountTitle" aria-modal="true">
@@ -116,12 +137,40 @@
     <div id="markdownPreview" class="markdown-preview"></div>
   </div>
 </div>
+
+<!-- Diary Modal -->
+<div id="diaryModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="diaryTitle" aria-modal="true">
+  <div class="modal-content">
+    <button id="closeDiaryModal" class="close" aria-label="Close diary">&times;</button>
+    <h2 id="diaryTitle">Private Diary</h2>
+
+    <label for="diaryDate" class="form-label">Select Date</label>
+    <input type="date" id="diaryDate" class="form-input" />
+
+    <textarea id="diaryText" placeholder="Write your thoughts here..." rows="8" class="form-textarea"></textarea>
+
+    <div class="button-group">
+      <button id="saveDiary" class="btn primary">Save Entry</button>
+      <button id="deleteDiary" class="btn danger">Delete Entry</button>
+      <button id="exportDiaryBtn" class="btn primary" type="button">Export Entries</button>
+    </div>
+
+    <hr />
+
+    <label for="searchInput" class="form-label">Search Entries</label>
+    <input type="search" id="searchInput" placeholder="Search diary..." class="form-input" />
+
+    <ul id="searchResults" class="search-results" role="listbox" tabindex="0"></ul>
+  </div>
+</div>
+
   <footer>
     <p>Personal use only. Do not redistribute without permission.</p>
   </footer>
-
-  <script src="scripts/tools.js">
-  </script>
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="scripts/tools.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
 
 </body>
 </html>

@@ -410,29 +410,39 @@ document.addEventListener("DOMContentLoaded", () => {
   function generatePDF(rows, filename) {
     const doc = new window.jspdf.jsPDF("p", "pt");
     const pageWidth = doc.internal.pageSize.getWidth();
+    const pageHeight = doc.internal.pageSize.getHeight();
     const margin = 40;
-    const colWidth = (pageWidth - 2 * margin) / rows[0].length;
+    const colCount = rows[0].length;
+    const colWidth = (pageWidth - 2 * margin) / colCount;
 
     doc.setFontSize(10);
-
     let y = margin;
-    rows.forEach((row, i) => {
+
+    for (let i = 0; i < rows.length; i++) {
+      const row = rows[i];
       if (!Array.isArray(row)) {
         throw new Error(`Row ${i + 1} is not a valid array.`);
       }
 
-      row.forEach((cell, j) => {
-        const x = margin + j * colWidth;
-        doc.text(String(cell), x, y, { maxWidth: colWidth });
-      });
+      // Wrap each cell's content
+      const wrappedCells = row.map(cell => doc.splitTextToSize(String(cell), colWidth));
+      const maxLines = Math.max(...wrappedCells.map(cell => cell.length));
+      const rowHeight = maxLines * 14; // approx line height
 
-      y += 18;
-
-      if (y > doc.internal.pageSize.getHeight() - margin) {
+      // Page break if needed
+      if (y + rowHeight > pageHeight - margin) {
         doc.addPage();
         y = margin;
       }
-    });
+
+      // Draw text
+      for (let j = 0; j < wrappedCells.length; j++) {
+        const x = margin + j * colWidth;
+        doc.text(wrappedCells[j], x, y);
+      }
+
+      y += rowHeight;
+    }
 
     const safeName = filename.replace(/\.[^/.]+$/, "") + ".pdf";
     doc.save(safeName);

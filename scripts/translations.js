@@ -52,7 +52,17 @@ The courage within you is now a melody — genuine and real!
 Now the voice is a melody, born from the heart’s pure truth 
 The courage within you is now a melody — genuine and real! 
 Truth alone remains — and it made our voices one 
-The light that shines in darkness is a melody, real and true`
+The light that shines in darkness is a melody, real and true
+
+
+Credits
+English Title: What It Sounds Like
+Source: K-Pop Demon Hunters (2025)
+Language: Filipino (Tagalog Dub)
+Singers: Felicity Kyle Napuli (Rumi), 
+         Venisse Siy (Mira), 
+         Maronne Cruz (Zoey)
+Translation: me`
   },
   {
     id: 2,
@@ -108,6 +118,13 @@ Free! Free!
 Even when I hid, you saw through me
 You changed the sound of my voice
 Let’s face the fears we once ran from
-And leave behind all we’ve been through`,
+And leave behind all we’ve been through
+
+Credits
+Source: K-Pop Demon Hunters (2025)
+Language: Filipino (Tagalog Dub)
+Singers: Felicity Kyle Napuli (Rumi), 
+         Marc Peter Baluyan (Jinu)
+Translation: me`,
   },
 ];

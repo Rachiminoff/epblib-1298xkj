@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Text Archive</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #121212;
+      color: #e0e0e0;
+    }
+
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    #sidebar {
+      width: 220px;
+      background: #1e1e1e;
+      padding: 1em;
+    }
+
+    #sidebar h2 {
+      font-size: 1.2em;
+      margin-top: 0;
+    }
+
+    #sidebar ul {
+      padding: 0;
+    }
+
+    #sidebar li {
+      list-style: none;
+      margin: 0.5em 0;
+      cursor: pointer;
+      padding: 6px 10px;
+      border-radius: 4px;
+      transition: background 0.2s ease;
+    }
+
+    #sidebar li.active,
+    #sidebar li:hover {
+      background: #333;
+    }
+
+    main {
+      flex: 1;
+      padding: 1.5em;
+      overflow-y: auto;
+    }
+
+    #searchInput {
+      width: 100%;
+      padding: 0.5em;
+      margin-bottom: 1em;
+      background: #2b2b2b;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+    }
+
+    #textGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1em;
+    }
+
+    .textCard {
+      background: #1f1f1f;
+      padding: 1em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .textCard:hover {
+      background: #2a2a2a;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .modal-content {
+      background: #222;
+      padding: 2em;
+      border-radius: 8px;
+      width: 80%;
+      max-width: 700px;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .close {
+      float: right;
+      font-size: 1.5em;
+      cursor: pointer;
+      color: #aaa;
+    }
+
+    .close:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <aside id="sidebar">
+      <h2>Categories</h2>
+      <ul>
+        <li data-category="All" class="active">All</li>
+        <li data-category="Song"> Song </li>
+        <li data-category="Drama">Drama</li>
+      </ul>
+    </aside>
+
+    <main>
+      <h1 id="main-title">Text Archive (0)</h1>
+      <input type="text" id="searchInput" placeholder="Search text..." />
+      <div id="textGrid"></div>
+    </main>
+  </div>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <pre id="modalContent" style="white-space: pre-wrap;"></pre>
+    </div>
+  </div>
+
+  <script src="scripts/text.js"></script>
+  <script src="scripts/translations.js"></script>
+</body>
+</html>

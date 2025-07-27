@@ -1,7 +1,5 @@
-// Assuming `books` is already defined globally (from books.js)
 const storedBooks = JSON.parse(localStorage.getItem("customBooks") || "[]");
 
-// Combine the original books with stored books from localStorage
 let allBooks = [...books, ...storedBooks];
 
 const grid = document.getElementById("bookGrid");

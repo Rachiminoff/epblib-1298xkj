@@ -11,15 +11,19 @@
       color: #e0e0e0;
     }
 
+    /* Container layout */
     .container {
       display: flex;
+      flex-direction: row;
       min-height: 100vh;
     }
 
+    /* Sidebar */
     #sidebar {
       width: 220px;
       background: #1e1e1e;
       padding: 1em;
+      transition: transform 0.3s ease;
     }
 
     #sidebar h2 {
@@ -45,9 +49,10 @@
       background: #333;
     }
 
+    /* Main content */
     main {
       flex: 1;
-      padding: 1.5em;
+      padding: 1em 1.5em;
       overflow-y: auto;
     }
 
@@ -59,8 +64,10 @@
       color: #fff;
       border: none;
       border-radius: 4px;
+      font-size: 1em;
     }
 
+    /* Grid of cards */
     #textGrid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -81,6 +88,7 @@
       background: #2a2a2a;
     }
 
+    /* Modal */
     .modal {
       display: none;
       position: fixed;
@@ -93,10 +101,10 @@
 
     .modal-content {
       background: #222;
-      padding: 2em;
+      padding: 1.5em;
       border-radius: 8px;
-      width: 80%;
-      max-width: 700px;
+      width: 90%;
+      max-width: 600px;
       max-height: 80vh;
       overflow-y: auto;
     }
@@ -111,15 +119,61 @@
     .close:hover {
       color: #fff;
     }
+
+    /* Burger menu for mobile */
+    #burger {
+      display: none;
+      font-size: 1.5em;
+      cursor: pointer;
+      padding: 0.5em;
+      background: #1e1e1e;
+      border-radius: 4px;
+      margin: 1em;
+    }
+
+    /* Responsive styles */
+    @media screen and (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      #sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        transform: translateX(-100%);
+        z-index: 1000;
+      }
+
+      #sidebar.active {
+        transform: translateX(0);
+      }
+
+      main {
+        padding: 1em;
+      }
+
+      #burger {
+        display: block;
+      }
+
+      #textGrid {
+        grid-template-columns: 1fr; /* Single column for mobile */
+      }
+    }
   </style>
 </head>
 <body>
+  <!-- Burger menu button -->
+  <div id="burger">&#9776; Menu</div>
+
   <div class="container">
     <aside id="sidebar">
       <h2>Categories</h2>
       <ul>
         <li data-category="All" class="active">All</li>
-        <li data-category="Song"> Song </li>
+        <li data-category="Song">Song</li>
         <li data-category="Drama">Drama</li>
       </ul>
     </aside>
@@ -141,5 +195,13 @@
 
   <script src="scripts/text.js"></script>
   <script src="scripts/translations.js"></script>
+  <script>
+    const burger = document.getElementById('burger');
+    const sidebar = document.getElementById('sidebar');
+
+    burger.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>

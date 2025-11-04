@@ -2,13 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Text Archive</title>
   <style>
     body {
       margin: 0;
-      font-family: sans-serif;
+      font-family: system-ui, sans-serif;
       background: #121212;
       color: #e0e0e0;
+      overflow-x: hidden; /* prevent horizontal scroll */
     }
 
     /* Container layout */
@@ -20,7 +22,7 @@
 
     /* Sidebar */
     #sidebar {
-      width: 220px;
+      width: 240px;
       background: #1e1e1e;
       padding: 1em;
       transition: transform 0.3s ease;
@@ -33,14 +35,15 @@
 
     #sidebar ul {
       padding: 0;
+      margin: 0;
     }
 
     #sidebar li {
       list-style: none;
       margin: 0.5em 0;
       cursor: pointer;
-      padding: 6px 10px;
-      border-radius: 4px;
+      padding: 10px 12px;
+      border-radius: 6px;
       transition: background 0.2s ease;
     }
 
@@ -58,12 +61,12 @@
 
     #searchInput {
       width: 100%;
-      padding: 0.5em;
+      padding: 0.75em;
       margin-bottom: 1em;
       background: #2b2b2b;
       color: #fff;
       border: none;
-      border-radius: 4px;
+      border-radius: 6px;
       font-size: 1em;
     }
 
@@ -79,13 +82,14 @@
       padding: 1em;
       border-radius: 8px;
       cursor: pointer;
-      transition: background 0.2s ease;
+      transition: background 0.2s ease, transform 0.2s ease;
       overflow: hidden;
       text-overflow: ellipsis;
     }
 
     .textCard:hover {
       background: #2a2a2a;
+      transform: translateY(-3px);
     }
 
     /* Modal */
@@ -93,25 +97,27 @@
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.85);
       justify-content: center;
       align-items: center;
       z-index: 999;
+      padding: 1em;
     }
 
     .modal-content {
       background: #222;
-      padding: 1.5em;
-      border-radius: 8px;
-      width: 90%;
+      padding: 1.2em;
+      border-radius: 10px;
+      width: 95%;
       max-width: 600px;
-      max-height: 80vh;
+      max-height: 85vh;
       overflow-y: auto;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
     }
 
     .close {
       float: right;
-      font-size: 1.5em;
+      font-size: 1.6em;
       cursor: pointer;
       color: #aaa;
     }
@@ -123,12 +129,14 @@
     /* Burger menu for mobile */
     #burger {
       display: none;
-      font-size: 1.5em;
+      font-size: 1.6em;
       cursor: pointer;
-      padding: 0.5em;
+      padding: 0.5em 0.75em;
       background: #1e1e1e;
-      border-radius: 4px;
-      margin: 1em;
+      border-radius: 6px;
+      margin: 0.75em;
+      width: fit-content;
+      color: #e0e0e0;
     }
 
     /* Responsive styles */
@@ -139,27 +147,49 @@
 
       #sidebar {
         position: fixed;
-        left: 0;
         top: 0;
+        left: 0;
         bottom: 0;
         transform: translateX(-100%);
         z-index: 1000;
+        width: 70%;
+        max-width: 280px;
+        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
       }
 
       #sidebar.active {
         transform: translateX(0);
       }
 
-      main {
-        padding: 1em;
-      }
-
       #burger {
         display: block;
       }
 
+      main {
+        padding: 1em;
+      }
+
       #textGrid {
         grid-template-columns: 1fr; /* Single column for mobile */
+      }
+
+      .modal-content {
+        width: 95%;
+        padding: 1em;
+      }
+    }
+
+    @media screen and (max-width: 420px) {
+      #sidebar {
+        width: 80%;
+      }
+
+      #searchInput {
+        font-size: 0.9em;
+      }
+
+      h1#main-title {
+        font-size: 1.2em;
       }
     }
   </style>
@@ -201,6 +231,15 @@
 
     burger.addEventListener('click', () => {
       sidebar.classList.toggle('active');
+    });
+
+    // Close sidebar when clicking outside on mobile
+    document.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768 && sidebar.classList.contains('active')) {
+        if (!sidebar.contains(e.target) && e.target !== burger) {
+          sidebar.classList.remove('active');
+        }
+      }
     });
   </script>
 </body>
